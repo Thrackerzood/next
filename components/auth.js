@@ -18,5 +18,7 @@ router.post('/registration', async (req,res)=>{
       console.log(error)
    }
 })
-
+router.post('/login', async (req,res)=>{
+   console.log(req.body)
+})
 module.exports = router

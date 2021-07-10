@@ -15,8 +15,9 @@ export  const Nav = ():JSX.Element => {
          </div>
          <ul className={state ? 'open' : 'close'}>
             <li><Link href='/'><a className={router.pathname == '/' ? 'active' : ''}>Домашняя</a></Link></li>
-            <li><Link href='/auth'><a className={router.pathname == '/auth' ? 'active' : ''}>Вход</a></Link></li>
             <li><Link href='/random'><a className={router.pathname == '/random' ? 'active' : ''}>Рандомная</a></Link></li>
+            <li><Link href='/chat'><a className={router.pathname == '/chat' ? 'active' : ''}>Чат</a></Link></li>
+            <li><Link href='/auth/login'><a className={router.pathname == '/auth' || '/auth/login' || '/auth/registration' ? 'active' : ''}>Вход</a></Link></li>
          </ul>
       </nav>
       </NavStyle>)

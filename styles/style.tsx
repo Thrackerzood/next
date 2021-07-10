@@ -13,7 +13,7 @@ li{
    list-style-type: none;
 }
 body{
-   background: rgb(5,5,5);
+   background: white;
 }
 .sidebar_open_nav{
    top: 0;
@@ -37,7 +37,7 @@ position: sticky;
    height: 100%;
    display: flex;
    position: fixed;
-   background: black;
+   background: #000000d1;
    flex-direction: column;
 }
 .sidebar_close_header{
@@ -45,7 +45,7 @@ position: sticky;
    left: 0;
    width: 100%;
    position: fixed;
-   background: black;
+   background: #000000d1;
 }
 nav{
    .sidebar_close{
@@ -59,7 +59,7 @@ nav{
             >div{
                width: 22px;
                transition: .3s;
-               background: rgb(130,130,130);
+               background: #4fc3f7;
             }
          }
       div{
@@ -76,7 +76,7 @@ nav{
          margin: .4rem;
          background: white;
          :hover{
-            background: rgb(130,130,130);
+            background: #4fc3f7;
             animation: rotate-center 0.6s ease-in-out both;
             @keyframes rotate-center {
                0% {
@@ -107,14 +107,14 @@ nav{
          a{
             color: white;
             :hover{
-               color: #785FEE;
+               color: #a0e2ff;
             }
             font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
          }
          .active{
             font-size: 20px;
             font-weight: 600;
-            color: #652FEE !important;
+            color: #4fc3f7 !important;
          }
       }
    }
@@ -134,7 +134,6 @@ nav{
 @media screen and (max-width: 420px){
    .sidebar_open_header{
       width: 100% !important;
-      background: rgb(0,0,0,0.99);
    }
 }
 `
@@ -147,41 +146,38 @@ export const MainAuth = styled.main
 `
 display: flex;
 max-width: 600px;
-border-radius: 15px;
 flex-direction: column;
-min-height: calc(75vh - 8rem);
-margin: calc(4rem + 30px) auto;
+justify-content: center;
+min-height: calc(100vh - 8rem);
+margin: 2rem auto;
    >section{ 
       display: flex;
-      background: rgb(0,0,0);
       border-radius: 15px;
       flex-direction: column;
-      height: calc(75vh - 8rem);
+      min-height: calc(75vh - 8rem);
       justify-content: space-between;
-      >section{
+      section{
          margin: 1rem;
          display: flex;
-         border-radius: 15px 15px 0 0;
-         background: rgb(12,12,12);
+         border: 2px solid #4fc3f7;
          justify-content: flex-end;
-         p{
-            display: none;
+         >p{
+            color: black !important;
+            font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
          }
          .active{
+            color: red;
             margin: 20px;
             display: block;
             transition .5s;
             cursor: pointer;
             font-size: 14px;
-            font-weight: 600;
+            font-weight: 600; 
             padding: 5px 15px;
-            background: white;
-            border-radius: 20px;
+            border: 2px solid #4fc3f7;
             font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
             :hover{
-               color: #bf0000;
-               padding: 5px 25px;
-               background: rgb(220,220,220);
+               background: rgba(39,155,207,.5);
             }
          }
       }
@@ -189,11 +185,15 @@ margin: calc(4rem + 30px) auto;
             padding: 1rem;
             display: flex;
             min-height: 250px;
-            background: rgb(12,12,12);
             align-items: center;
             flex-direction: column;
-            border-radius: 0 0 15px 15px;
             justify-content: space-evenly;
+            .true{
+               border-bottom: 2px solid green !important;
+            }
+            .false{
+               border-bottom: 2px solid red !important;
+            }
          >input{
             width: 180px;
             border: none;
@@ -201,8 +201,12 @@ margin: calc(4rem + 30px) auto;
             margin-top: 1rem;
             padding: 7px 15px;
             background: white;
-            border-radius: 20px;
+            border-bottom: 2px solid black;
             font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+            @media screen and (max-width: 420px){
+               width: calc(100% - 30px);
+               margin: 15px;
+            }
          }
          >button{ 
             color: black;
@@ -211,12 +215,20 @@ margin: calc(4rem + 30px) auto;
             outline: none;
             transition: .5s;
             font-size: 20px;
-            padding: 5px 25px;
             background: white;
-            border-radius: 50px;
+            padding: 2.5px 25px;
+            border: 2px solid #4fc3f7;
+            @media screen and (max-width: 420px){
+               padding: 4px;
+            }
+         }
+         .disabled{
+            color: red !important;
+            border: 2px solid gray !important;
+         }
+         .inDisabled{
             :hover{
-               color: #bf2222;
-               background: rgb(200,200,200);
+               background: rgba(39,155,207,.5);
             }
          }
          p:nth-child(1){
@@ -233,11 +245,33 @@ margin: calc(4rem + 30px) auto;
       }
    }
 `
-
+export const Page404 = styled.main
+`
+display: flex;
+max-width: 100%;
+align-items: center;
+flex-direction: column;
+justify-content: center;
+min-height: calc(100vh - 4rem);
+font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+h1{
+   color: red;
+   font-size: 8vw;
+}
+p{
+   a{
+      padding: 2px;
+      color: #096690;
+      border-bottom: 1px solid;
+      :hover{
+         color: #4fc3f7;
+      }
+   }
+}
+`
 export const FooterStyle = styled.footer
 `
 width: 100%;
-height: 300px;
-margin-top: 4rem;
-background: black;
+height: 4rem;
+background: #000000d1;
 `
