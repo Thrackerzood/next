@@ -223,13 +223,24 @@ margin: 2rem auto;
             }
          }
          .disabled{
-            color: red !important;
-            border: 2px solid gray !important;
+            display: none;
          }
          .inDisabled{
             :hover{
                background: rgba(39,155,207,.5);
             }
+         }
+         .error{
+            padding: 5px;
+            text-align: center;
+            color: red !important;
+            font-size: 16px !important;
+         }
+         .good{
+            padding: 5px;
+            text-align: center;
+            color: green !important;
+            font-size: 16px !important;
          }
          p:nth-child(1){
             color: white;
