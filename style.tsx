@@ -18,6 +18,7 @@ body{
 .sidebar_open_nav{
    top: 0;
    left: 0;
+   z-index: 1;
    width: 100%;
    height: 100vh;
    position: fixed;
@@ -29,7 +30,6 @@ export const NavStyle = styled.header
 `
 top: 0;
 left: 0;
-position: sticky;
 .sidebar_open_header{
    top: 0;
    left: 0;
@@ -140,7 +140,37 @@ nav{
 
 export const HomeMain = styled.main
 `
-
+display: flex;
+align-items: flex-start;
+min-height: calc(100vh - 4rem);
+>section:nth-child(1){
+   z-index: 0;
+   width: 100%;
+   display: flex;
+   background: rgb(235,235,235);
+   overflow-x: scroll;
+   margin: 4rem 0 0 auto;
+   align-items: flex-start;
+   >section{
+      margin: 5px;
+      width: 150px;
+      min-width: 30px;
+      
+      p{
+         max-width: 100%;
+         height: 18px;
+         overflow: hidden;
+         text-align: center;
+         ::after{
+            content: "...";
+         }
+      }
+   }
+}
+>section:nth-child(2){
+   max-width: 450px;
+   margin: 4rem auto 0 0;
+}
 `
 export const MainAuth = styled.main
 `
