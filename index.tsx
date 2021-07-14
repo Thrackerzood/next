@@ -16,7 +16,7 @@ export default function Home(): JSX.Element {
       <section key={index}>
           <Image alt={element.show_name_eng} 
           src={'http://localhost/next%20js/my-app/public' + element.show_picture_1980}
-          width={200} height={300} layout="responsive" loading={'lazy'}/>
+          width={200} height={300} layout="responsive" loading='lazy'/>
         <a href={element.show_name_eng}><p>{element. show_name_eng}</p></a>
       </section>
     )
